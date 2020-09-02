@@ -14,11 +14,25 @@
   <i class="twitter icon"></i>
 </button>
 
-{{ video.title }} - {{ video.duration }}
+<ul>
+{% for video in videos %}
+    <li>{{ video.title }} - {{ video.duration }}</li>
+{% endfor %}
+</ul>
 
 <ul>
   {% for genre in genres %}
   <li>{{ genre.name }}</li>
   {% endfor %}
 </ul>
+
+<form method="post" action="{%  url 'search' %}">
+    {% csrf_token %}
+    <br />
+    {{ myform }}
+    <br />
+</form>
+
+<span>DATABASE_URL: {{ database_url }}</span>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
