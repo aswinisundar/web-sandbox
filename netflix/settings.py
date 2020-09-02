@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     'pure-escarpment-54887.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
